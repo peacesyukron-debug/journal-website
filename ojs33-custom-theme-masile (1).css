@@ -1,0 +1,750 @@
+/**
+ * =========================================================================
+ * Open Journal Systems (OJS) 3.3.x Enhanced Custom Theme Stylesheet
+ * Journal: MASILE: Jurnal Studi Ilmu Keislaman
+ * Publisher: Institut Pesantren Babakan (IPEBA) Cirebon
+ * Official URL: https://jurnal.ipeba.ac.id/index.php/masile
+ * e-ISSN: 2686-0732 (p-ISSN: Tidak ada)
+ * Akreditasi: SINTA 5
+ * DOI Prefix: https://doi.org/10.68698/masile.v7i1
+ * Generated / Refined: 2026-10-26
+ * =========================================================================
+ * 
+ * PANDUAN APLIKASI DI OJS 3.3.x:
+ * 1. Login sebagai Journal Manager / Administrator OJS 3.3
+ * 2. Buka menu: Settings > Website > Appearance > tab "Advanced"
+ * 3. Pada bagian "Journal style sheet", klik "Upload File" dan pilih file CSS ini
+ * 4. Klik tombol "Save" di bagian bawah.
+ * 5. (Opsional) Buka menu "Clear Data Caches" di Administration jika tampilan belum berganti.
+ */
+
+:root {
+  /* Brand Palette */
+  --ojs-primary-color: #008B44;
+  --ojs-primary-dark: #0f172a;
+  --ojs-primary-light: #f8fafc;
+  --ojs-accent-gold: #c59b27;
+  --ojs-primary-hover: #007036;
+  
+  /* Typography & Borders */
+  --ojs-font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  --ojs-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ojs-border-color: #e2e8f0;
+  --ojs-border-subtle: #f1f5f9;
+  --ojs-border-radius: 8px;
+  --ojs-text-main: #1e293b;
+  --ojs-text-muted: #64748b;
+  --ojs-text-light: #94a3b8;
+  
+  /* Layout & Elevations */
+  --ojs-container-width: 1200px;
+  --ojs-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --ojs-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --ojs-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================================================================
+ * 1. GLOBAL RESETS & TYPOGRAPHY
+ * ========================================================================= */
+body.pkp_page_index,
+body.pkp_page_article,
+body.pkp_page_issue,
+body.pkp_page_about,
+body.pkp_page_editorialTeam,
+body.pkp_page_submissions,
+body.pkp_page_contact,
+body.pkp_page_search {
+  font-family: var(--ojs-font-family);
+  color: var(--ojs-text-main);
+  background-color: #f8fafc;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--ojs-primary-color);
+  text-decoration: none;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+a:hover, a:focus {
+  color: var(--ojs-primary-hover);
+  text-decoration: underline;
+}
+
+/* Base Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ojs-font-family);
+  color: var(--ojs-primary-dark);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* =========================================================================
+ * 2. TOP BANNER, HEADER & NAVIGATION BAR
+ * ========================================================================= */
+.pkp_structure_head {
+  background-color: #ffffff;
+  border-bottom: 3px solid var(--ojs-primary-color);
+  box-shadow: var(--ojs-shadow-sm);
+  position: relative;
+  z-index: 40;
+}
+
+/* Journal Identity / Site Name */
+.pkp_site_name_wrapper {
+  padding: 1.25rem 0;
+}
+
+.pkp_site_name .is_text {
+  font-family: var(--ojs-font-family);
+  font-weight: 700;
+  color: var(--ojs-primary-color) !important;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+  display: block;
+  text-decoration: none;
+}
+
+.pkp_site_name .journal_institution_tagline {
+  font-family: var(--ojs-font-sans);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--ojs-text-muted);
+  display: block;
+  margin-top: 0.2rem;
+  letter-spacing: 0.02em;
+}
+
+/* ISSN Header Meta Badge */
+.masile_header_issn_badge {
+  font-family: var(--ojs-font-sans);
+  font-size: 0.775rem;
+  color: var(--ojs-text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Top Utility Bar (Login / Register / Language) */
+.pkp_navigation_user_wrapper {
+  background: #f1f5f9;
+  border-bottom: 1px solid var(--ojs-border-color);
+  padding: 0.35rem 0;
+  font-family: var(--ojs-font-sans);
+  font-size: 0.8rem;
+}
+
+.pkp_navigation_user > li > a {
+  color: var(--ojs-text-muted) !important;
+  font-weight: 500;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+}
+
+.pkp_navigation_user > li > a:hover {
+  color: var(--ojs-primary-color) !important;
+  background-color: rgba(0, 139, 68, 0.08);
+}
+
+/* Primary Navigation Menu */
+.pkp_navigation_primary_row {
+  background-color: var(--ojs-primary-color);
+}
+
+.pkp_navigation_primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--ojs-font-sans);
+}
+
+.pkp_navigation_primary > li > a {
+  color: #ffffff !important;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.85rem 1.15rem;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  position: relative;
+}
+
+.pkp_navigation_primary > li > a:hover,
+.pkp_navigation_primary > li > a:focus,
+.pkp_navigation_primary > li.active > a {
+  background-color: rgba(0, 0, 0, 0.18) !important;
+  color: #ffffff !important;
+}
+
+/* Dropdown Menu Support in OJS 3.3 */
+.pkp_navigation_primary > li {
+  position: relative;
+}
+
+.pkp_navigation_primary ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 210px;
+  background: #ffffff;
+  border: 1px solid var(--ojs-border-color);
+  border-top: 3px solid var(--ojs-primary-color);
+  box-shadow: var(--ojs-shadow-lg);
+  border-radius: 0 0 var(--ojs-border-radius) var(--ojs-border-radius);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  z-index: 50;
+}
+
+.pkp_navigation_primary > li:hover > ul {
+  display: block;
+}
+
+.pkp_navigation_primary ul a {
+  color: var(--ojs-text-main) !important;
+  font-size: 0.825rem;
+  font-weight: 500;
+  padding: 0.6rem 1.25rem;
+  display: block;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.pkp_navigation_primary ul a:hover {
+  background-color: #f8fafc;
+  color: var(--ojs-primary-color) !important;
+}
+
+/* =========================================================================
+ * 3. LAYOUT STRUCTURE & CONTAINERS
+ * ========================================================================= */
+.pkp_structure_page {
+  max-width: var(--ojs-container-width);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem 1rem;
+}
+
+.pkp_structure_content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.pkp_structure_main {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+.pkp_structure_sidebar {
+  flex: 0 0 310px;
+  width: 310px;
+}
+
+/* Breadcrumbs */
+.pkp_structure_breadcrumb {
+  font-family: var(--ojs-font-sans);
+  font-size: 0.8rem;
+  color: var(--ojs-text-muted);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--ojs-border-color);
+}
+
+.pkp_structure_breadcrumb a {
+  color: var(--ojs-text-muted);
+}
+
+.pkp_structure_breadcrumb a:hover {
+  color: var(--ojs-primary-color);
+}
+
+.pkp_structure_breadcrumb .separator {
+  margin: 0 0.5rem;
+  color: var(--ojs-text-light);
+}
+
+/* =========================================================================
+ * 4. SIDEBAR BLOCKS (PKP 3.3 BLOCK ARCHITECTURE)
+ * ========================================================================= */
+.pkp_block {
+  background: #ffffff;
+  border: 1px solid var(--ojs-border-color);
+  border-radius: var(--ojs-border-radius);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--ojs-shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pkp_block:hover {
+  border-color: #cbd5e1;
+  box-shadow: var(--ojs-shadow-md);
+}
+
+.pkp_block .title {
+  font-family: var(--ojs-font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ojs-primary-color);
+  border-bottom: 2px solid var(--ojs-primary-color);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Make a Submission CTA Button */
+.pkp_block_make_submission a.action,
+.pkp_block_makeSubmission a,
+.masile_btn_submission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  background-color: var(--ojs-primary-color) !important;
+  color: #ffffff !important;
+  font-family: var(--ojs-font-sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--ojs-border-radius);
+  text-decoration: none !important;
+  box-shadow: 0 4px 10px rgba(0, 139, 68, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.pkp_block_make_submission a.action:hover,
+.pkp_block_makeSubmission a:hover,
+.masile_btn_submission:hover {
+  background-color: var(--ojs-primary-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 139, 68, 0.35);
+  opacity: 1 !important;
+}
+
+/* Journal Article Template Button */
+.masile_btn_template {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  background-color: #0284c7;
+  color: #ffffff !important;
+  font-family: var(--ojs-font-sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--ojs-border-radius);
+  text-decoration: none !important;
+  transition: background-color 0.2s ease;
+}
+
+.masile_btn_template:hover {
+  background-color: #0369a1;
+}
+
+/* Sidebar Quick Nav List */
+.masile_sidebar_menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.masile_sidebar_menu li {
+  border-bottom: 1px dashed var(--ojs-border-color);
+}
+
+.masile_sidebar_menu li:last-child {
+  border-bottom: none;
+}
+
+.masile_sidebar_menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.35rem;
+  font-family: var(--ojs-font-sans);
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--ojs-text-main);
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.masile_sidebar_menu a:hover {
+  color: var(--ojs-primary-color);
+  transform: translateX(3px);
+}
+
+/* Indexing Badges Grid */
+.masile_indexing_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+
+.masile_indexing_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: #f8fafc;
+  border: 1px solid var(--ojs-border-color);
+  border-radius: 4px;
+  font-family: var(--ojs-font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ojs-text-main);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.masile_indexing_item:hover {
+  background: #ffffff;
+  border-color: var(--ojs-primary-color);
+  color: var(--ojs-primary-color);
+  box-shadow: var(--ojs-shadow-sm);
+}
+
+/* =========================================================================
+ * 5. CURRENT ISSUE & ISSUE TOC
+ * ========================================================================= */
+.obj_issue_toc .heading {
+  border-bottom: 2px solid var(--ojs-border-color);
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.obj_issue_toc .heading h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.35rem 0;
+  color: var(--ojs-primary-dark);
+}
+
+.obj_issue_toc .heading .meta {
+  font-family: var(--ojs-font-sans);
+  font-size: 0.825rem;
+  color: var(--ojs-text-muted);
+}
+
+/* Section Header (e.g. Articles, Hukum Islam) */
+.obj_issue_toc .section {
+  margin-bottom: 2rem;
+}
+
+.obj_issue_toc .section .title {
+  font-family: var(--ojs-font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ojs-primary-color);
+  padding: 0.5rem 0;
+  border-bottom: 2px solid rgba(0, 139, 68, 0.2);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+/* Article Summary Card */
+.obj_article_summary {
+  background: #ffffff;
+  border: 1px solid var(--ojs-border-color);
+  border-left: 4px solid var(--ojs-primary-color);
+  border-radius: var(--ojs-border-radius);
+  padding: 1.35rem;
+  margin-bottom: 1.15rem;
+  box-shadow: var(--ojs-shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.obj_article_summary:hover {
+  border-color: #cbd5e1;
+  border-left-color: var(--ojs-primary-color);
+  box-shadow: var(--ojs-shadow-md);
+  transform: translateY(-1px);
+}
+
+.obj_article_summary .title a {
+  color: var(--ojs-primary-dark);
+  font-weight: 700;
+  font-size: 1.15rem;
+  line-height: 1.45;
+  text-decoration: none;
+  display: block;
+}
+
+.obj_article_summary .title a:hover {
+  color: var(--ojs-primary-color);
+}
+
+.obj_article_summary .authors {
+  font-family: var(--ojs-font-sans);
+  font-size: 0.875rem;
+  color: var(--ojs-text-muted);
+  margin-top: 0.45rem;
+  font-weight: 500;
+}
+
+.obj_article_summary .meta_row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+  font-family: var(--ojs-font-sans);
+  font-size: 0.8rem;
+  color: var(--ojs-text-light);
+}
+
+.obj_article_summary .doi_badge {
+  color: var(--ojs-primary-color);
+  font-family: var(--ojs-font-sans);
+  font-size: 0.775rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.obj_article_summary .doi_badge:hover {
+  text-decoration: underline;
+}
+
+/* Galley PDF Button */
+.obj_galley_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: var(--ojs-primary-color) !important;
+  color: #ffffff !important;
+  font-family: var(--ojs-font-sans);
+  font-size: 0.775rem;
+  font-weight: 700;
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+  transition: all 0.15s ease;
+}
+
+.obj_galley_link:hover {
+  background-color: var(--ojs-primary-hover) !important;
+  box-shadow: 0 3px 6px rgba(0, 139, 68, 0.25);
+  opacity: 1 !important;
+}
+
+/* =========================================================================
+ * 6. ARTICLE DETAIL PAGE (PKP PAGE ARTICLE)
+ * ========================================================================= */
+.page_article .article_main_header {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--ojs-border-color);
+}
+
+.page_article .article_title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ojs-primary-dark);
+  line-height: 1.35;
+  margin-bottom: 1rem;
+}
+
+.page_article .authors_list {
+  font-family: var(--ojs-font-sans);
+  margin-bottom: 1rem;
+}
+
+.page_article .author_item {
+  font-weight: 600;
+  color: var(--ojs-primary-dark);
+  font-size: 1rem;
+}
+
+.page_article .author_affiliation {
+  font-size: 0.85rem;
+  color: var(--ojs-text-muted);
+  font-weight: 400;
+  margin-left: 0.35rem;
+}
+
+.page_article .item.doi {
+  font-family: var(--ojs-font-sans);
+  font-size: 0.85rem;
+  color: var(--ojs-primary-color);
+  margin-bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page_article .item.abstract {
+  background: #ffffff;
+  border: 1px solid var(--ojs-border-color);
+  border-radius: var(--ojs-border-radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--ojs-shadow-sm);
+}
+
+.page_article .item.abstract h3 {
+  font-family: var(--ojs-font-sans);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ojs-primary-color);
+  border-bottom: 2px solid var(--ojs-primary-color);
+  padding-bottom: 0.4rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.page_article .item.abstract p {
+  text-align: justify;
+  font-size: 0.975rem;
+  line-height: 1.8;
+  color: var(--ojs-text-main);
+}
+
+.page_article .item.keywords {
+  font-family: var(--ojs-font-sans);
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  color: var(--ojs-text-muted);
+}
+
+.page_article .item.references {
+  background: #ffffff;
+  border: 1px solid var(--ojs-border-color);
+  border-radius: var(--ojs-border-radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.page_article .item.references h3 {
+  font-family: var(--ojs-font-sans);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ojs-primary-color);
+  border-bottom: 2px solid var(--ojs-primary-color);
+  padding-bottom: 0.4rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.page_article .item.references ol {
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.page_article .item.references li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+/* How to Cite Box */
+.masile_cite_box {
+  background: #f8fafc;
+  border: 1px solid var(--ojs-border-color);
+  border-radius: var(--ojs-border-radius);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  font-family: var(--ojs-font-sans);
+}
+
+/* =========================================================================
+ * 7. FOOTER
+ * ========================================================================= */
+.pkp_structure_footer {
+  background-color: var(--ojs-primary-dark);
+  color: #94a3b8;
+  padding: 3rem 1rem 2rem 1rem;
+  font-family: var(--ojs-font-sans);
+  font-size: 0.875rem;
+  border-top: 4px solid var(--ojs-primary-color);
+}
+
+.pkp_structure_footer .footer_container {
+  max-width: var(--ojs-container-width);
+  margin: 0 auto;
+}
+
+.pkp_structure_footer h4 {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pkp_structure_footer a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.pkp_structure_footer a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* =========================================================================
+ * 8. MOBILE & RESPONSIVE FIXES (OJS 3.3 COMPATIBILITY)
+ * ========================================================================= */
+@media (max-width: 992px) {
+  .pkp_structure_content {
+    flex-direction: column !important;
+  }
+  
+  .pkp_structure_sidebar {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+  
+  .pkp_navigation_primary {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .pkp_navigation_primary > li > a {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .pkp_navigation_primary ul {
+    position: static;
+    box-shadow: none;
+    background: rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .pkp_structure_head,
+  .pkp_structure_sidebar,
+  .pkp_structure_footer,
+  .obj_galley_link {
+    display: none !important;
+  }
+  
+  body, .pkp_structure_page {
+    background: #ffffff !important;
+    color: #000000 !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}
